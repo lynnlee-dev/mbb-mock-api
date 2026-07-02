@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: mbb-mock-api
+
+  datasource:
+    # JDBC URL for Microsoft SQL Server
+    url:  jdbc:sqlserver://localhost:1433;databaseName=TESTDB;encrypt=false;trustServerCertificate=true
+    username: demo
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.mbb-mock-api: DEBUG
+
+  file:
+    name: logs/application.log
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+
+random-user:
+  base-url: https://randomuser.me
